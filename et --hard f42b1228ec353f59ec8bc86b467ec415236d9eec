@@ -1,0 +1,228 @@
+[33mcommit f42b1228ec353f59ec8bc86b467ec415236d9eec[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: DefntlyNotJose <joesalinas1235@gmail.com>
+Date:   Mon Apr 15 22:37:12 2024 -0500
+
+    Add .gitattributes file
+
+[33mcommit 86f1cada361f6959c5de88845a818588e5fff1a9[m
+Author: DefntlyNotJose <joesalinas1235@gmail.com>
+Date:   Mon Apr 15 22:31:28 2024 -0500
+
+    flask update
+
+[33mcommit 18fd9144eb727ef7d1adc63f1fcb29993b171feb[m
+Author: DefntlyNotJose <joesalinas1235@gmail.com>
+Date:   Mon Apr 15 21:57:44 2024 -0500
+
+    Flask
+
+[33mcommit 36d59732a393064fdb566b4c0c73d8da0f1049ae[m
+Author: DefntlyNotJose <joesalinas1235@gmail.com>
+Date:   Mon Apr 15 21:08:36 2024 -0500
+
+    SQLite
+
+[33mcommit 77b917b2a3fe13f5590a152a54a3abc6ada98521[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: DefntlyNotJose <joesalinas1235@gmail.com>
+Date:   Mon Apr 15 20:15:08 2024 -0500
+
+    jose
+
+[33mcommit 6ef50c8344408faff7a97b24173740cab0f04364[m
+Merge: d38a462 e957acc
+Author: HasmigG <hasmigg23@gmail.com>
+Date:   Sun Apr 14 10:47:26 2024 -0700
+
+    merge
+
+[33mcommit d38a462f71f714803649af36b39df70621964827[m
+Author: HasmigG <hasmigg23@gmail.com>
+Date:   Sun Apr 14 10:44:41 2024 -0700
+
+    update
+
+[33mcommit e957acc86c3810be5dd000dd71aadca1323de304[m
+Merge: 665310d 4e6da88
+Author: ModGenu <mother@rebeccas-mbp.attlocal.net>
+Date:   Sun Apr 14 12:04:11 2024 -0500
+
+    updates and calculations
+
+[33mcommit 665310de7efb86bde1ee11b950e48b10e05c1052[m
+Author: ModGenu <mother@rebeccas-mbp.attlocal.net>
+Date:   Sun Apr 14 11:54:19 2024 -0500
+
+    data normalized, first stab at calculations
+
+[33mcommit 4e6da8881b0594e5c89ec2fb69ce9dee5597f6ee[m
+Merge: 5ecb1c8 d5485a3
+Author: Brandon Campbell <Mataharih21>
+Date:   Sun Apr 14 02:26:02 2024 -0700
+
+            is this right?
+    t commit
+
+[33mcommit 5ecb1c89c23c964af223c616b94b2fc33f8cba86[m
+Author: Brandon Campbell <Mataharih21>
+Date:   Sun Apr 14 02:25:07 2024 -0700
+
+    Percentages
+
+[33mcommit d5485a3cda5156db2da37273fbb4bba6461e3def[m
+Author: ModGenu <mother@rebeccas-mbp.attlocal.net>
+Date:   Sat Apr 13 19:05:32 2024 -0500
+
+    adding a loop to run dfs through
+
+[33mcommit 3c43660eb828d499be71914783b16a1363c28f75[m
+Author: HasmigG <hasmigg23@gmail.com>
+Date:   Sat Apr 13 09:33:55 2024 -0700
+
+    combined csv data file for GitHub
+
+[33mcommit d57999469e2604960794c8c66630a2209dc1adae[m
+Author: ModGenu <mother@rebeccas-mbp.attlocal.net>
+Date:   Sat Apr 13 07:54:00 2024 -0500
+
+    fixing some functions
+
+[33mcommit 919a06ee85bd924725530c0af433dadf29709dcc[m
+Author: HasmigG23 <HasmigG23@gmail.com>
+Date:   Fri Apr 12 20:33:49 2024 -0700
+
+    update
+
+[33mcommit 8d49ac49ebe14d1778bda4d6eb9cc8294f1b607b[m
+Author: HasmigG23 <HasmigG23@gmail.com>
+Date:   Fri Apr 12 17:25:34 2024 -0700
+
+    update
+
+[33mcommit ca8a01460e79b08a36bea6762ed0dea43bd3ad86[m
+Merge: 8dd5512 4b76cca
+Author: HasmigG23 <HasmigG23@gmail.com>
+Date:   Fri Apr 12 17:23:29 2024 -0700
+
+    update
+
+[33mcommit 8dd55122efb4c514eb6ee870e8ff53070ce9bb2d[m
+Author: HasmigG23 <HasmigG23@gmail.com>
+Date:   Fri Apr 12 17:20:21 2024 -0700
+
+    update
+
+[33mcommit 4b76cca075d10521eae702ceedfece0e8bca7cb3[m
+Author: ModGenu <mother@rebeccas-mbp.attlocal.net>
+Date:   Fri Apr 12 18:06:42 2024 -0500
+
+    adding some functions
+
+[33mcommit 82728da22fcd8b7145db4856bd690ae2dc93a7f6[m
+Author: ModestGenu <153142659+ModestGenu@users.noreply.github.com>
+Date:   Fri Apr 12 15:58:15 2024 -0500
+
+    Create etl_Rebecca
+
+[33mcommit 4395077b5c7f3120b53c01b935d5ce4aae1f0ab4[m
+Author: ModGenu <mother@rebeccas-mbp.attlocal.net>
+Date:   Wed Apr 10 23:34:45 2024 -0500
+
+    still an error
+
+[33mcommit 585a707e5dfcbd4e1d0fc5f0f4cd1b42afa53814[m
+Author: HasmigG <hasmigg23@gmail.com>
+Date:   Wed Apr 10 20:51:38 2024 -0700
+
+    update
+
+[33mcommit bd6f1cfdcf4965b3b02bb0722f08032c9c48bd00[m
+Author: HasmigG <hasmigg23@gmail.com>
+Date:   Wed Apr 10 19:32:31 2024 -0700
+
+    etl_shared
+
+[33mcommit 4aef3dcda45a0091df8f28b0d834b9ef01bd8879[m
+Author: HasmigG23 <HasmigG23@gmail.com>
+Date:   Wed Apr 10 09:59:27 2024 -0700
+
+    rebin
+
+[33mcommit 9863221ebf5a0a6c4753d3831a8585e2631d91ef[m
+Merge: d9c6855 baa470f
+Author: HasmigG <hasmigg23@gmail.com>
+Date:   Tue Apr 9 20:17:20 2024 -0700
+
+    columns
+
+[33mcommit d9c68552de9e81ee1ab6e334f0d62507a4ce06d8[m
+Author: HasmigG <hasmigg23@gmail.com>
+Date:   Tue Apr 9 20:16:08 2024 -0700
+
+    columns
+
+[33mcommit baa470f4ecce90a9bb33167e501d009927c92851[m
+Author: DefntlyNotJose <joesalinas1235@gmail.com>
+Date:   Tue Apr 9 21:57:00 2024 -0500
+
+    short
+
+[33mcommit 6bf3f795e6980f5a0ece143a5722dc08209d6fdf[m
+Merge: dca6f86 cc30e86
+Author: HasmigG <hasmigg23@gmail.com>
+Date:   Tue Apr 9 19:49:03 2024 -0700
+
+    etl_Hasmig
+
+[33mcommit dca6f86debce2ee61eef3675c5db12cb8924da7d[m
+Author: HasmigG <hasmigg23@gmail.com>
+Date:   Tue Apr 9 19:45:35 2024 -0700
+
+    etl
+
+[33mcommit 8c1d983469a605b5df27b578ce994eb0ce9bbda6[m
+Author: HasmigG <hasmigg23@gmail.com>
+Date:   Tue Apr 9 19:43:29 2024 -0700
+
+    etl
+
+[33mcommit cc30e86ac6c3fe06c7e6dbd8c93013f46c45ccf2[m
+Author: DefntlyNotJose <joesalinas1235@gmail.com>
+Date:   Tue Apr 9 21:39:04 2024 -0500
+
+    jose_etl
+
+[33mcommit 096b9a71dd4f5930866fdedba619a13ac9546766[m
+Author: HasmigG <hasmigg23@gmail.com>
+Date:   Tue Apr 9 19:15:27 2024 -0700
+
+    etl
+
+[33mcommit 34cc299dc937402ff51d537b7a02926c84fc3752[m
+Author: HasmigG <153383628+HasmigG@users.noreply.github.com>
+Date:   Tue Apr 9 15:19:21 2024 -0700
+
+    Update README.md
+
+[33mcommit 40f872fe5fce7f31f9dde1e6c7cbe9f3589748b7[m
+Author: HasmigG <153383628+HasmigG@users.noreply.github.com>
+Date:   Tue Apr 9 15:17:02 2024 -0700
+
+    Update README.md
+
+[33mcommit 65eb9dfbb8230d31818f8f5a82df672096eabcda[m
+Author: HasmigG23 <HasmigG23@gmail.com>
+Date:   Tue Apr 9 12:32:27 2024 -0700
+
+    etl
+
+[33mcommit 4f37195208b6db8e90fe69edb4d7d7d33cb8ad09[m
+Author: HasmigG <153383628+HasmigG@users.noreply.github.com>
+Date:   Tue Apr 9 10:14:25 2024 -0700
+
+    Update .gitignore
+
+[33mcommit b24a002492ed912d97dadf7b259e745af15179f4[m
+Author: HasmigG <153383628+HasmigG@users.noreply.github.com>
+Date:   Tue Apr 9 10:13:01 2024 -0700
+
+    Initial commit
