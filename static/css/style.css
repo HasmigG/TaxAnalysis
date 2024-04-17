@@ -11,3 +11,12 @@ nav {
     color: white;
     border-bottom: 2px solid black;
 }
+
+select {
+    margin: 10px;
+    font-size: 1.5rem;
+    width: 10%;
+    border-radius: 8px;
+    background: darkgray;
+    color: white;
+}

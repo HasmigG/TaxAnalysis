@@ -3,8 +3,8 @@ import pandas as pd
 from flask import Flask,jsonify, render_template
 
 df = pd.read_csv('Data/combined_zpallagi.csv')
-
-conn = sqlite3.connect('Charitable_Contributions.db')
+conn = sqlite3.connect('Charitable_Contributions.sqlite')
+df.to_sql('tax_returns', conn, if_exists='replace', index=False)
 
 app = Flask(__name__)
 
@@ -13,11 +13,11 @@ def home():
     return render_template('index.html')
 
 # from Jose's app.py
-@app.route('/zip_data')
-def get_zip_data():
-    conn = sqlite3.connect('data.db')
+@app.route('/api/v1.0/charitable_data')
+def get_data():
+    conn = sqlite3.connect('Charitable_Contributions.sqlite')
     cursor = conn.cursor()
-    cursor.execute('SELECT * FROM zip_data')
+    cursor.execute('SELECT * FROM tax_returns')
     data = cursor.fetchall()
     conn.close()
     return jsonify(data)
