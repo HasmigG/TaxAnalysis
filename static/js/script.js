@@ -1,27 +1,24 @@
 
-const init = async () => {
-    console.log('Test Test 1 2 3');
-    let data = await (await fetch('/api/v1.0/charitable_data')).json();
-    let years = [... new Set(data.map(states => states[1]))];
+const init = async (year,state) => {
+
+  let data = await (await fetch('/api/v1.0/charitable_data')).json();
+
+  if (state == undefined) {
+
     let states = [... new Set(data.map(states => states[2]))];
 
-
-
-    console.log(
-        data[0]
-    );
-
-    // populating years
-    document.getElementById('years').innerHTML = '';
-    years.forEach(year => {
-        document.getElementById('years').innerHTML += `<option>${year}</option>`
-    });
-
+    state = states[0];
+    
     // populating states
     document.getElementById('states').innerHTML = '';
     states.forEach(state => {
-        document.getElementById('states').innerHTML += `<option>${state}</option>`
+      document.getElementById('states').innerHTML += `<option>${state}</option>`
     });
+  };
+
+  let ch_amt = data.map(data => data[18])
+
+  console.log(ch_amt);
 
 
 
