@@ -13,10 +13,15 @@ nav {
 }
 
 select {
-    margin: 10px;
+    margin: 10% 0 0 5%;
     font-size: 1.5rem;
     width: 10%;
     border-radius: 8px;
     background: darkgray;
     color: white;
+}
+
+#charts {
+    margin: 10% 20%;
+    border-radius: 2px solid ;
 }

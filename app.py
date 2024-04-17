@@ -24,9 +24,9 @@ def get_data():
 
 @app.route('/api/v1.0/rate_of_charitable_returns')
 def get_rate_of_charitable_rt():
-    df = pd.read_json('Data/rate_of_charitable_returns.json')
+    df = pd.read_json('Data/rate_of_charitable_returns.json', orient='records')
 
-    return df.to_dict()
+    return df.to_json()
 
 if __name__ == '__main__':
     app.run(debug=True)
