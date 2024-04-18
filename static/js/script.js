@@ -1,5 +1,5 @@
 
-const init = async (year, state) => {
+const init = async (state) => {
 
   let data_1 = await (await fetch('/api/v1.0/charitable_data')).json();
   let data_2 = await (await fetch('/api/v1.0/rate_of_charitable_returns')).json();
@@ -18,44 +18,51 @@ const init = async (year, state) => {
     });
   };
 
+  
 
   let filter_index = Object.entries(data_2.State).filter(arr => arr[1] == state).map(arr => arr[0]);
-  
-  let amounts = Object.entries(data_2.Rate_of_Returns_claiming_Charitable_Contribution)
+
+  let rates = Object.entries(data_2.Rate_of_Returns_claiming_Charitable_Contribution)
     .filter(arr => filter_index.includes(arr[0]))
     .map(arr => arr[1]);
 
-  let agi_stubs = Object.entries(data_2.new_agi_stub)
-    .filter(arr => filter_index.includes(arr[0]))
-    .map(arr => arr[1]);
+  let agi_stubs = [... new Set(Object.entries(data_2.new_agi_stub).map(arr => arr[1]))];
 
-  let x_values = [... new Set(Object.values(data_2.year))];
+  agi_ids = {};
+
+  agi_stubs
+    .map(x => `AGI_BRAKET_${x}`)
+    .forEach(key => agi_ids[key] = []);
+
+  var agi_index = 1
+  rates.forEach(rate => {
+    agi_ids[`AGI_BRAKET_${agi_index}`].push(rate);
+
+    agi_index++;
+    if (agi_index > 6) {
+      agi_index = 1;
+    }
+  });
 
   let data = []
 
-  let trace = {}
-
-  for (let i = 0; i < agi_stubs.length; i++) {
-      trace[agi_stubs[i]] = 0
-  }
-
-  console.log(trace);
-
-  let trace1 = {
-    x: x_values,
-    y: amounts,
-    type: 'scatter'
-  };
-
-  let trace2 = {
-    x: x_values,
-    y: amounts,
-    type: 'scatter'
-  };
+  let years = [... new Set(Object.values(data_2.year))];
 
 
-  Plotly.newPlot('charts', data, { width: '60%' });
+  Object.entries(agi_ids).forEach(([key,val]) => {
+    data.push(
+      {
+        x: years,
+        y: val,
+        text:key,
+        name: key,
+        type: 'scatter'
+              }
+    )
+  });
 
+
+  Plotly.newPlot('charts', data, {title: "<b>% of Total Returns Claiming Charitable Contributions</b>", width: '60%' });
 };
 
 init();
