@@ -32,12 +32,12 @@ const init = async (state) => {
   agi_ids = {};
 
   agi_stubs
-    .map(x => `AGI_BRAKET_${x}`)
+    .map(x => `AGI_Bracket_${x}`)
     .forEach(key => agi_ids[key] = []);
 
   var agi_index = 1
   rates.forEach(rate => {
-    agi_ids[`AGI_BRAKET_${agi_index}`].push(rate);
+    agi_ids[`AGI_Bracket_${agi_index}`].push(rate);
 
     agi_index++;
     if (agi_index > 6) {
