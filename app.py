@@ -20,12 +20,13 @@ def get_data():
     cursor.execute('SELECT * FROM tax_returns')
     data = cursor.fetchall()
     conn.close()
+
+    print(data)
     return jsonify(data)
 
 @app.route('/api/v1.0/rate_of_charitable_returns')
 def get_rate_of_charitable_rt():
     df = pd.read_json('Data/rate_of_charitable_returns.json', orient='records')
-
     return df.to_json()
 
 if __name__ == '__main__':

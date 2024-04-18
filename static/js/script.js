@@ -18,7 +18,7 @@ const init = async (state) => {
     });
   };
 
-  
+  console.log(data_1[0]);
 
   let filter_index = Object.entries(data_2.State).filter(arr => arr[1] == state).map(arr => arr[0]);
 
