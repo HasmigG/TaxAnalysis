@@ -19,10 +19,8 @@ def get_data():
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM tax_returns')
     data = cursor.fetchall()
-    conn.close()
-
-    print(data)
-    return jsonify(data)
+    headers = [ x[0] for x in cursor.description ]
+    return pd.DataFrame(data,columns=headers).to_json()
 
 @app.route('/api/v1.0/rate_of_charitable_returns')
 def get_rate_of_charitable_rt():

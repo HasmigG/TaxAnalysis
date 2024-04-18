@@ -4,10 +4,9 @@ const init = async (state) => {
   let data_1 = await (await fetch('/api/v1.0/charitable_data')).json();
   let data_2 = await (await fetch('/api/v1.0/rate_of_charitable_returns')).json();
 
-
   if (state == undefined) {
 
-    let states = [... new Set(data_1.map(states => states[2]))];
+    let states = [... new Set(Object.values(data_1.State))];
 
     state = states[0];
 
@@ -18,9 +17,11 @@ const init = async (state) => {
     });
   };
 
-  console.log(data_1[0]);
-
   let filter_index = Object.entries(data_2.State).filter(arr => arr[1] == state).map(arr => arr[0]);
+
+  let charitable_amt = Object.entries(data_1.Charitable_Amt)
+    .filter(arr => filter_index.includes(arr[0]))
+    .map(arr => arr[1]);
 
   let rates = Object.entries(data_2.Rate_of_Returns_claiming_Charitable_Contribution)
     .filter(arr => filter_index.includes(arr[0]))
@@ -61,8 +62,9 @@ const init = async (state) => {
     )
   });
 
-
   Plotly.newPlot('charts', data, {title: "<b>% of Total Returns Claiming Charitable Contributions</b>", width: '60%' });
+
+  console.log(charitable_amt);
 };
 
 init();
