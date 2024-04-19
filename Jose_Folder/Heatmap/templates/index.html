@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaflet Heatmap</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <style>
+    #map {
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <select id="year-dropdown">
+    <option value="2012">2012</option>
+    <option value="2013">2013</option>
+    <option value="2014">2014</option>
+    <option value="2015">2015</option>
+    <option value="2016">2016</option>
+    <option value="2017">2017</option>
+    <option value="2018">2018</option>
+    <option value="2019">2019</option>
+    <option value="2020">2020</option>
+    <option value="2021">2021</option>   
+    </select>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="{{ url_for('static', filename='us.states.js') }}"></script>
+  <script src="{{ url_for('static', filename='name_change.js') }}"></script>
+  
+  <script>
+
+    $(document).ready(function() {
+      var map;
+      var heatmapLayer;
+
+      function initializeMap() {
+        map = L.map('map').setView([37.8, -96], 4);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+      }
+
+      function updateHeatmap(year) {
+        $.getJSON('http://127.0.0.1:5000/heatmap_data/' + year, function(data) {
+          if (heatmapLayer) {
+            map.removeLayer(heatmapLayer);
+          }
+
+          // Removed unnecessary line - heatmapData is already created within the loop
+          // var heatmapData = {};
+           statesData.features.forEach(function (state) { 
+  state.properties.contrib_amt = data.filter((entry) => entry.State === fullStateToAbbreviation(state.properties.name))[0 ].Charitable_Amt;
+console.log(state.properties);
+}
+          );
+
+          heatmapLayer = L.geoJson(statesData, {
+            style: function(feature) {
+             // var charitableAmt = statesData[feature.properties.contrib_amt] || 0; // Default to 0 if no data available
+                var charitableAmt = feature.properties.contrib_amt || 0; // Default to 0 if no data available
+             console.log(charitableAmt)
+              return {
+                fillColor: getColor(charitableAmt),
+                weight: 2,
+                opacity: 1,
+                color: 'white',
+                dashArray: '3',
+                fillOpacity: 0.7
+              };
+            }
+          }).addTo(map);
+        });
+      }
+
+      function getColor(d) {
+ 
+    return d > 15000000 ? '#FF6F00' : // Neon red for the highest values
+           d > 10000000 ? '#FFD700' : // Neon yellow
+           d > 7500000  ? '#FFEB3B' : // Yellow
+           d > 5000000  ? '#FFC107' : // Amber
+           d > 2500000  ? '#FF9800' : // Orange
+           d > 1000000  ? '#F57C00' : // Dark orange
+           d > 500000   ? '#EF5350' : // Light red
+                          '#FF0000';   // Neon red for the lowest values
+}
+
+
+
+
+
+      $('#year-dropdown').change(function() {
+        var selectedYear = $(this).val();
+        updateHeatmap(selectedYear);
+      });
+
+      // Initialize map and heatmap with default year
+      initializeMap();
+      updateHeatmap($('#year-dropdown').val());
+    });
+  </script>
+</body>
+</html>
+  
