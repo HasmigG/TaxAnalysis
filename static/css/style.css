@@ -22,5 +22,11 @@ select {
 }
 
 #charts {
-    margin: 10% 20%;
+    margin: 5%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#chart_01, #chart_02 {
+    width: 45%;
 }
